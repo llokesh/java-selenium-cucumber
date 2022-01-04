@@ -30,7 +30,7 @@ public class ui_steps {
 
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-          driver.get("http://automationpractice.com");
+          driver.get("url");
 
       }
 
