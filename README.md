@@ -27,7 +27,16 @@ Step 4: In the next screen, you will have to mention a Group ID and Artifact ID
 
 Step 5: Now, in order to build a Selenium-Cucumber framework for us to work with, we need to add dependency for Selenium and Cucumber in pom.xml, which is somewhat similar to adding JAR files. We will be needing dependencies of the following: 
 
-Selenium-java Cobertura Cucumber-jvm-deps Cucumber-reporting Gherkin JUnit Mockito-all-1.10.19 Cucumber-core Cucumber-java Cucumber-junit
+Selenium-java 
+Cobertura 
+Cucumber-jvm-deps 
+Cucumber-reporting 
+Gherkin 
+JUnit 
+Mockito-all-1.10.19 
+Cucumber-core 
+Cucumber-java 
+Cucumber-junit
 
 Step 6: To add dependencies for the above, you should refer to https://mvnrepository.com/. After adding dependencies for Cucumber and Selenium, the pom.xml file will showing up
 
