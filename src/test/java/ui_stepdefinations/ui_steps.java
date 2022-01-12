@@ -18,7 +18,7 @@ public class ui_steps {
 	
 	public static WebDriver driver;
 	
-	@Given("^user is on homepage$")
+	@Given("^user is on home page$")
 
     public void user_is_on_homepage() throws Throwable {
 
@@ -30,7 +30,7 @@ public class ui_steps {
 
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-          driver.get("url");
+          driver.get("http://automationpractice.com");
 
       }
 

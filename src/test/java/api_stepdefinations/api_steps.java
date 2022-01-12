@@ -15,8 +15,8 @@ public class api_steps {
 
     private ValidatableResponse validatableResponse;
  
-    private String endpoint = "url";
-  
+    private String endpoint = "http://dummy.restapiexample.com/api/v1/employee/1";
+    
     @Given("I send a request to the URL to get user details")
     public void sendRequest(){
         validatableResponse = given().contentType(ContentType.JSON)
