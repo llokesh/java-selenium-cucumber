@@ -40,6 +40,9 @@ Thumbs.db
 *.exe
 *.war
 
+# report folder
+.test-output/
+
 # Large media files
 *.mp4
 *.tiff
