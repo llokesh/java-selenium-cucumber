@@ -1,6 +1,37 @@
 # README #
 
+
+```
+Problem Statement:
+1.Create GitHub repository, Define best practices around branching strategy & roles 
+
+2. Setup BDD Test automation framework which uses
+- Singleton & factory design patterns
+- Virtual services to simulate third party API respond 
+- Use Dynamic Test data in Tests
+
+Website  - Automate any flow on https://www.zoho.com/ website
+Endpoint - https://api.restful-api.dev/objects
+Include below validations
+- get all phone names  starting with work apple 
+- get phone with lowest cost
+- validate that ID is not null
+- Provide reusable methods for POST, DELETE, PUT calls too
+
+Please include below features in your project
+scalability
+configurable
+reporting
+code modularity
+
+3. Use any build tool - Maven, Gradle
+4. Setup pipeline to run  this code remotely 
+5. how to run this code on docker/Kubernetes cluster
+6. Create Test Execution report
+```
+
 This README would normally document whatever steps are necessary to get your application up and running.
+
 
 Prerequisites To Set Up Cucumber
 
