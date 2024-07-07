@@ -48,7 +48,6 @@ public class LoginPage {
     
     public LoginPage() {
 		this.driver = null;
-		// TODO Auto-generated constructor stub
 	}
 
 	public void navigateToLoginPage() {

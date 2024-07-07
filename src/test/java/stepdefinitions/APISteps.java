@@ -25,7 +25,7 @@ import java.util.Collections;
 import java.util.List;
 import org.testng.Assert;
 
-public class APIsteps {
+public class APISteps {
 	
 
     private ValidatableResponse validatableResponse;
