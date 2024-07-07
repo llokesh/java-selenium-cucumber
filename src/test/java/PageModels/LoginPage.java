@@ -29,6 +29,9 @@ public class LoginPage {
     @FindBy(css = "div.zgh-brand")
     private WebElement brandLogo;
     
+    @FindBy(css = "div.zoho_brand")
+    private WebElement brandLogo1;
+    
     @FindBy(css = "div.errorlabel")
     private WebElement errorMessage;
 
@@ -72,7 +75,7 @@ public class LoginPage {
     }
 
     public boolean brandLogoExists() {
-        return SeleniumUtils.isElementPresent(brandLogo);
+        return SeleniumUtils.isElementPresent(brandLogo) ||  SeleniumUtils.isElementPresent(brandLogo1);
     }
     
     public boolean errorMessageExists() {
