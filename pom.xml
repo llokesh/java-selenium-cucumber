@@ -138,7 +138,7 @@
         <version>${maven.surefire.plugin.version}</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
+            <suiteXmlFile>src/test/java/runner/testng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
