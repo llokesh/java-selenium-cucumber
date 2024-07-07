@@ -1,20 +1,40 @@
 package selenium_java_cucumber;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import static io.restassured.RestAssured.given;
 
+import org.junit.Rule;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        Assert.assertTrue( true );
-    }
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+
+public class AppTest {
+	@Rule
+	public WireMockRule wireMockRule = new WireMockRule(9876);
+
+	@Test
+	public void basic_get_with200response() {
+
+		given().
+			baseUri("http://localhost").
+			port(9876).
+		when().
+			get("/customer/101").
+		then().
+			assertThat().
+			statusCode(200);
+	}
+	
+	@Test
+	public void basic_get_with404response() {
+				
+		given().
+			baseUri("http://localhost").
+			port(9876).
+		when().
+			get("/customer/999").
+		then().
+			assertThat().
+			statusCode(404);
+	}
+
 }

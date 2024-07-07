@@ -13,12 +13,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <cucumber.version>7.15.0</cucumber.version>
-    <selenium.version>4.16.1</selenium.version>
+    <selenium.version>4.22.0</selenium.version>
     <testng.version>7.9.0</testng.version>
     <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
     <maven.surefire.plugin.version>3.2.3</maven.surefire.plugin.version>
-    <maven.compiler.source.version>17</maven.compiler.source.version>
-    <maven.compiler.target.version>17</maven.compiler.target.version>
+    <maven.compiler.source.version>1.8</maven.compiler.source.version>
+    <maven.compiler.target.version>1.8</maven.compiler.target.version>
   </properties>
  
   <dependencies>
@@ -58,9 +58,26 @@
     <dependency>
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
-        <version>2.3</version>
-        <scope>provided</scope>
+        <version>2.11.0</version>
     </dependency>
+
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi</artifactId>
+        <version>5.2.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.2</version>
+    </dependency>
+    
+    <dependency>
+    	<groupId>com.fasterxml.jackson.core</groupId>
+    	<artifactId>jackson-databind</artifactId>
+    	<version>2.13.0</version>
+	</dependency>
  
     <!-- Selenium -->
     <dependency>
@@ -75,6 +92,32 @@
       <artifactId>testng</artifactId>
       <version>${testng.version}</version>
       <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.13.2</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.github.tomakehurst</groupId>
+		<artifactId>wiremock-jre8</artifactId>
+		<version>2.35.1</version>
+		<scope>test</scope>
+	</dependency>
+
+    <dependency>         
+      <groupId>net.masterthought</groupId>        
+      <artifactId>cucumber-reporting</artifactId>                     
+      <version>5.6.1</version>      
+	</dependency>
+	
+	<dependency>
+		 <groupId>io.github.bonigarcia</groupId>
+		 <artifactId>webdrivermanager</artifactId>
+		 <version>4.3.1</version>
     </dependency>
  
   </dependencies>
@@ -99,6 +142,33 @@
           </suiteXmlFiles>
         </configuration>
       </plugin>
+      
+      <plugin>
+		   <groupId>net.masterthought</groupId>
+		   <artifactId>maven-cucumber-reporting</artifactId>
+		   <version>5.6.0</version>
+		   <executions>
+		     <execution>
+			<id>execution</id>
+			<phase>verify</phase>
+			<goals>
+			    <goal>generate</goal>
+			</goals>
+			<configuration>		
+			<projectName>cucumberReporting</projectName>    
+		        <skip>false</skip>		
+		        <outputDirectory>${project.build.directory}</outputDirectory>	     
+		        <inputDirectory>${project.build.directory}</inputDirectory>
+		        <jsonFiles>
+		          <param>**/*.json</param>
+		        </jsonFiles>	
+		        <mergeFeaturesById>false</mergeFeaturesById>
+		        <mergeFeaturesWithRetest>false</mergeFeaturesWithRetest>
+		        <checkBuildResult>false</checkBuildResult>		    			  
+		        </configuration>
+		   </execution>
+		  </executions>
+	</plugin>
     </plugins>
   </build>
  

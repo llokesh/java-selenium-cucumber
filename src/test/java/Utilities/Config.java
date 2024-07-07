@@ -6,7 +6,7 @@ public class Config {
     // https://chromium.googlesource.com/chromium/src/+/master/chrome/common/chrome_switches.cc
     // https://peter.sh/experiments/chromium-command-line-switches/
     public static String[] ChromeOptions = {
-            "--kiosk"
+            "--headless"
     };
     public static int elementWaitTimeout = 60;
 }

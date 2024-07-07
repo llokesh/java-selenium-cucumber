@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import Utilities.PropertiesCache;
 import Utilities.SeleniumUtils;
 
 public class LoginPage {
@@ -26,9 +28,14 @@ public class LoginPage {
 
     @FindBy(css = "div.zgh-brand")
     private WebElement brandLogo;
+    
+    @FindBy(css = "div.errorlabel")
+    private WebElement errorMessage;
 
     @FindBy(className = "logout-btn")
     private WebElement logoutButton;
+    
+    public final static String url = PropertiesCache.getInstance().getProperty("host.address");
 
 
     public LoginPage(WebDriver driver) {
@@ -36,8 +43,13 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
     
-    public void navigateToLoginPage() {
-    	driver.get("https://www.zoho.com/");
+    public LoginPage() {
+		this.driver = null;
+		// TODO Auto-generated constructor stub
+	}
+
+	public void navigateToLoginPage() {
+    	driver.get(url);
     }
 
     public LoginPage enterUserName(String username) {
@@ -46,6 +58,7 @@ public class LoginPage {
     }
 
     public LoginPage enterPassword(String password) {
+    	loginPassword.clear();
     	loginPassword.sendKeys(password);
         return this;
     }
@@ -60,6 +73,10 @@ public class LoginPage {
 
     public boolean brandLogoExists() {
         return SeleniumUtils.isElementPresent(brandLogo);
+    }
+    
+    public boolean errorMessageExists() {
+        return SeleniumUtils.isElementPresent(errorMessage);
     }
 
     public void logOut() {

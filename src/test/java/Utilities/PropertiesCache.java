@@ -26,7 +26,7 @@ public class PropertiesCache {
     if (null != prefix) {
       filename = prefix + "." + BASE_AUTOMATION_PROPERTIES_FILENAME;
     } else {
-      filename = "local." + BASE_AUTOMATION_PROPERTIES_FILENAME;
+      filename = "dev." + BASE_AUTOMATION_PROPERTIES_FILENAME;
     }
     System.out.println("Configuring test run from property file: " + filename);
     return filename;
