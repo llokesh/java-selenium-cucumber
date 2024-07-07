@@ -34,8 +34,8 @@ public class LoginUISteps{
     @Before("@ui")
     public void beforeSetUp() {
     	
-//    	WebDriver driver = new ChromeDriver();
-//        WebDriverManager.chromedriver().setup();
+
+        WebDriverManager.chromedriver().setup();
         
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
