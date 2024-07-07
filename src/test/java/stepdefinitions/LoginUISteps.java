@@ -22,6 +22,7 @@ import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 public class LoginUISteps{
 	
 	public WebDriver driver;
@@ -33,9 +34,7 @@ public class LoginUISteps{
     
     @Before("@ui")
     public void beforeSetUp() {
-    	
-
-        WebDriverManager.chromedriver().setup();
+//        WebDriverManager.chromedriver().setup();
         
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
