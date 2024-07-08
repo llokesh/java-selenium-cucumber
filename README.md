@@ -4,7 +4,7 @@
 
 ### 1.Create GitHub repository, Define best practices around branching strategy & roles 
 
-The Test report is published in [Github page](https://llokesh.github.io/java-selenium-cucumber/CucumberTestReport.html)
+The Test report is published in [Github page](https://llokesh.github.io/java-selenium-cucumber/cucumber.html)
 
 I have leveraged branching strategy to differentiate between the working and merged changes
 GitHub repository is created with 3 branches: 

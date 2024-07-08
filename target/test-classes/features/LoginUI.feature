@@ -11,7 +11,7 @@ Scenario Outline: Login as a authenticated user
 
 	Examples:
 	| username                     | Password         |
-	| likithal39@gmail.com         | Sun$Daisy132     |
+	| jeevan.king@gmail.com         | Sun$Daisy132     |
 
 	
 @ui @missingcredentials
