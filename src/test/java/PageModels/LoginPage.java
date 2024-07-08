@@ -14,9 +14,6 @@ public class LoginPage {
 
 	private final WebDriver driver;
 
-	@FindBy(id = "Logout")
-	private WebElement logOut;
-
 	@FindBy(id = "login_id")
 	private WebElement loginUserName;
 
@@ -81,9 +78,9 @@ public class LoginPage {
 	}
 
 	public void logOut() {
-		logOut.click();
+		logoutButton.click();
 		driver.findElement(By.linkText("Sign Out")).click();
 		//Waiting for the user to log out
-		SeleniumUtils.explicitWait(10);
+		SeleniumUtils.wait(10);
 	}
 }
