@@ -28,11 +28,11 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn test
+      run: mvn clean verify -Dtestng.dtd.http=true
       
     - name: Publish Reports to github page
-      uses: deblockt/cucumber-report-annotations-action@v1.7
+      uses: peaceiris/actions-gh-pages@v3
       with:
-       access-token: ${{ secrets.GITHUB_TOKEN }}
-       path: "**/cucumber-report.json"
+       github_token: ${{ secrets.GITHUB_TOKEN }}
+       publish_dir: ./target/cucumber-reports
 
