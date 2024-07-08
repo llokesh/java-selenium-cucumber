@@ -94,6 +94,14 @@ The tests are created under unitTest package and is run as JUnit tests
 I have automated Login flow with positive and negative use cases with dynamic test data
 I have also included logOut
 
+* Scenario 1: User logs in with an empty username
+* Scenario 2: User logs with valid username but invalid password
+* Scenario 3: User logs with valid username and valid password
+
+I have accounted for the fact that user cannot sign in after 20 consecutive times, I fail the test with an assertion message
+I have accounted that website throws a warning message when the number of sign ins is nearing the limit
+
+
 ## Endpoint - https://api.restful-api.dev/objects
 I have included below validations
 - Validates the status code 

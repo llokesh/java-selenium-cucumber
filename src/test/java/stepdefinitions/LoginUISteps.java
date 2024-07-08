@@ -95,7 +95,7 @@ public class LoginUISteps{
         String Password=listLogin.get(rownum).get("Password");
         
         loginPage.enterUserName(username);
-      	loginPage.clickNext();
+      	loginPage.clickNextAndCheck();
       
        loginPage.enterPassword(Password);
        loginPage.clickNext();
@@ -108,7 +108,7 @@ public class LoginUISteps{
       public void user_enters_examples_credentials(String username, String Password) throws Throwable {
     	  
           loginPage.enterUserName(username);
-          loginPage.clickNext();
+          loginPage.clickNextAndCheck();
           
           loginPage.enterPassword(Password);
           loginPage.clickNext();

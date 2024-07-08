@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="213.439" tests="9" skipped="0" failures="3" errors="0">
-<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="2.564">
+<testsuite name="Cucumber" time="66.414" tests="9" skipped="0" failures="2" errors="0">
+<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="2.064">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then the response will return status 200....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Validate ID is not null" time="0.648">
+<testcase classname="Validation of get method" name="Validate ID is not null" time="0.57">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Validate ID is not null................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="0.429">
+<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="1.133">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone names containing "Apple"...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="0.595">
+<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="1.146">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone name of lowest price.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="24.115">
+<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="6.568">
 <failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
 <![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertFalse(Assert.java:67)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
 	at stepdefinitions.LoginUISteps.user_enters_examples_credentials(LoginUISteps.java:111)
 	at ✽.user enters "likithal39@gmail.com" and "Sun$Daisy132"(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:8)
 ]]>
@@ -43,44 +43,24 @@ Then verify logo is displayed...............................................skip
 And user logs out...........................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with empty username" time="15.806">
-<failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
-<![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_clicks_next(LoginUISteps.java:147)
-	at ✽.user clicks the next button(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:21)
-]]>
-</failure>
+<testcase classname="Login feature" name="Login with empty username" time="4.812">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
-And user clicks the next button.............................................failed
-Then verify error message is displayed......................................skipped
+And user clicks the next button.............................................passed
+Then verify error message is displayed......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with wrong credentials" time="30.329">
-<failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
-<![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_enters_datatable_credentials(LoginUISteps.java:129)
-	at ✽.user enters password(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:30)
-]]>
-</failure>
+<testcase classname="Login feature" name="Login with wrong credentials" time="14.986">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
 And user enters username....................................................passed
-And user enters password....................................................failed
-Then verify error message is displayed......................................skipped
+And user enters password....................................................passed
+Then verify error message is displayed......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="73.841">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="30.12">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -89,13 +69,23 @@ Then verify logo is displayed...............................................pass
 And user logs out...........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="64.718">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="4.78">
+<failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
+<![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertFalse(Assert.java:67)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
+	at stepdefinitions.LoginUISteps.the_user_enter_sheet_and(LoginUISteps.java:98)
+	at ✽.The user enter sheet "login" and 1(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:41)
+]]>
+</failure>
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
-When The user enter sheet "login" and 1.....................................passed
-Then verify logo is displayed...............................................passed
-And user logs out...........................................................passed
+When The user enter sheet "login" and 1.....................................failed
+Then verify logo is displayed...............................................skipped
+And user logs out...........................................................skipped
 ]]></system-out>
 </testcase>
 </testsuite>

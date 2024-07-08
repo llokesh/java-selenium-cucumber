@@ -38,6 +38,9 @@ public class LoginPage {
 
 	@FindBy(id = "continue_button")
 	private WebElement continueButton;
+	
+	@FindBy(css = "div.zgh-left-nav > div > div.head-sign-in > div.zgh-user-box> div.zgh-userPanel>div.zgh-userLink>ul>li.zgh-userLogout")
+	private WebElement signOut;
 
 	public final static String url = PropertiesCache.getInstance().getProperty("host.address");
 
@@ -64,13 +67,17 @@ public class LoginPage {
 
 	}
 
-	public void clickNext() {
+	public void clickNextAndCheck() {
 		nextButton.click();
 
 		//Test fails if max sign in limit is reached
 		if(SeleniumUtils.isElementPresent(errorMessage)) {
 		Assert.assertFalse(SeleniumUtils.isElementPresent(errorMessage), "Maximum limits are reached and user can no longer log in");
 		}
+	}
+	
+	public void clickNext() {
+		nextButton.click();
 	}
 
 	public void clickSignIn() {
@@ -92,7 +99,7 @@ public class LoginPage {
 
 	public void logOut() {
 		logoutButton.click();
-		driver.findElement(By.linkText("Sign Out")).click();
+		signOut.click();
 		// Waiting for the user to log out
 		SeleniumUtils.wait(10);
 	}
