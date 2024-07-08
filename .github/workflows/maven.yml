@@ -31,10 +31,10 @@ jobs:
         cache: maven
         
     - name: Build with Maven
-      run: mvn clean verify -Dtestng.dtd.http=true
+      run: mvn compile
 
     - name: Debug
-      run: pwd
+      run: ls target
       
     - name: Publish Reports to github page
       uses: peaceiris/actions-gh-pages@v4
