@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="115.06" tests="9" skipped="0" failures="0" errors="0">
-<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="1.799">
+<testsuite name="Cucumber" time="92.559" tests="9" skipped="0" failures="0" errors="0">
+<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="1.659">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then the response will return status 200....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Validate ID is not null" time="0.804">
+<testcase classname="Validation of get method" name="Validate ID is not null" time="0.542">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Validate ID is not null................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="0.449">
+<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="1.433">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone names containing "Apple"...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="1.628">
+<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="0.513">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone name of lowest price.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="43.382">
+<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="29.428">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -33,7 +33,7 @@ Then verify logo is displayed...............................................pass
 And user logs out...........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with empty username" time="2.812">
+<testcase classname="Login feature" name="Login with empty username" time="2.28">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -41,7 +41,7 @@ And user clicks the next button.............................................pass
 Then verify error message is displayed......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with wrong credentials" time="2.869">
+<testcase classname="Login feature" name="Login with wrong credentials" time="2.892">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -50,7 +50,7 @@ And user enters password....................................................pass
 Then verify error message is displayed......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="34.328">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="27.049">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -59,7 +59,7 @@ Then verify logo is displayed...............................................pass
 And user logs out...........................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="26.762">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="26.528">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
