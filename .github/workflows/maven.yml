@@ -31,7 +31,7 @@ jobs:
         cache: maven
         
     - name: Build with Maven
-      run: mvn clean verify -Dtestng.dtd.http
+      run: mvn test
 
     - name: Publish Reports to github page
       uses: peaceiris/actions-gh-pages@v4
