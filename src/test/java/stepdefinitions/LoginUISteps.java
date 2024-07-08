@@ -61,7 +61,9 @@ public class LoginUISteps{
     @After("@ui")
     //Tear down driver after each test
     public void afterTearDown() {
-        driver.quit();
+    	if(driver!=null) {
+    		driver.quit();
+    	}
         System.out.println("The Browser is quit successfully");
     }
 
@@ -92,13 +94,11 @@ public class LoginUISteps{
         String username=listLogin.get(rownum).get("Username");
         String Password=listLogin.get(rownum).get("Password");
         
-        loginPage
-      	.enterUserName(username)
-      	.clickNext();
+        loginPage.enterUserName(username);
+      	loginPage.clickNext();
       
-       loginPage
-      	.enterPassword(Password)
-      	.clickNext();
+       loginPage.enterPassword(Password);
+       loginPage.clickNext();
        }
 
      
@@ -107,13 +107,11 @@ public class LoginUISteps{
 
       public void user_enters_examples_credentials(String username, String Password) throws Throwable {
     	  
-          loginPage
-          	.enterUserName(username)
-          	.clickNext();
+          loginPage.enterUserName(username);
+          loginPage.clickNext();
           
-          loginPage
-          	.enterPassword(Password)
-          	.clickNext();
+          loginPage.enterPassword(Password);
+          loginPage.clickNext();
 
       }
       
@@ -127,9 +125,8 @@ public class LoginUISteps{
          for (Map<String, String> form : user) {
         	 String passWord = form.get("Password");
         	 
-             loginPage
-         	.enterPassword(passWord)
-         	.clickNext();
+             loginPage.enterPassword(passWord);
+             loginPage.clickNext();
 
          }
       }
@@ -138,9 +135,8 @@ public class LoginUISteps{
 
       public void user_enters_username() throws Throwable {
     	  
-          loginPage
-          	.enterUserName("ok@gmail.com")
-          	.clickNext();
+          loginPage.enterUserName("ok@gmail.com");
+          loginPage.clickNext();
 
       }
       
@@ -148,8 +144,7 @@ public class LoginUISteps{
 
       public void user_clicks_next() throws Throwable {
     	  
-          loginPage
-          	.clickNext();
+          loginPage.clickNext();
 
       }
 

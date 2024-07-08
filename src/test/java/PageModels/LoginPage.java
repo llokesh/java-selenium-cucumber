@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import Utilities.PropertiesCache;
 import Utilities.SeleniumUtils;
@@ -35,6 +36,9 @@ public class LoginPage {
 	@FindBy(css = "div.zgh-left-nav > div > div.head-sign-in > div.zgh-user-box> div.zgh-userPanel")
 	private WebElement logoutButton;
 
+	@FindBy(id = "continue_button")
+	private WebElement continueButton;
+
 	public final static String url = PropertiesCache.getInstance().getProperty("host.address");
 
 	public LoginPage(WebDriver driver) {
@@ -50,19 +54,23 @@ public class LoginPage {
 		driver.get(url);
 	}
 
-	public LoginPage enterUserName(String username) {
+	public void enterUserName(String username) {
 		loginUserName.sendKeys(username);
-		return this;
 	}
 
-	public LoginPage enterPassword(String password) {
+	public void enterPassword(String password) {
 		loginPassword.clear();
 		loginPassword.sendKeys(password);
-		return this;
+
 	}
 
 	public void clickNext() {
 		nextButton.click();
+
+		//Test fails if max sign in limit is reached
+		if(SeleniumUtils.isElementPresent(errorMessage)) {
+		Assert.assertFalse(SeleniumUtils.isElementPresent(errorMessage), "Maximum limits are reached and user can no longer log in");
+		}
 	}
 
 	public void clickSignIn() {
@@ -70,7 +78,12 @@ public class LoginPage {
 	}
 
 	public boolean brandLogoExists() {
-		return SeleniumUtils.isElementPresent(brandLogo) || SeleniumUtils.isElementPresent(brandLogo1);
+
+		if (SeleniumUtils.isElementPresent(continueButton)) {
+			continueButton.click();
+		}
+
+		return SeleniumUtils.isElementPresent(brandLogo);
 	}
 
 	public boolean errorMessageExists() {
@@ -80,7 +93,7 @@ public class LoginPage {
 	public void logOut() {
 		logoutButton.click();
 		driver.findElement(By.linkText("Sign Out")).click();
-		//Waiting for the user to log out
+		// Waiting for the user to log out
 		SeleniumUtils.wait(10);
 	}
 }

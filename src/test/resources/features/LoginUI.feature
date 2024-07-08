@@ -10,8 +10,8 @@ Scenario Outline: Login as a authenticated user
 	And user logs out
 
 	Examples:
-	| username                | Password         |
-	| likithal39@gmail.com    | Sun$Daisy132     |
+	| username                     | Password         |
+	| likithal39@gmail.com         | Sun$Daisy132     |
 
 	
 @ui @missingcredentials
@@ -46,5 +46,4 @@ Scenario Outline: User on login page and login with valid and invalid inputs fro
   | Sheetname | RowNumber |
   | login     |         0 |
   | login     |         1 |
-  | login     |         2 |
  
