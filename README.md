@@ -6,8 +6,8 @@
 
 The Test report is published in [Github page](https://llokesh.github.io/java-selenium-cucumber/cucumber.html)
 
-I have leveraged branching strategy to differentiate between the working and merged changes
-GitHub repository is created with 3 branches: 
+- I have leveraged branching strategy to differentiate between the working and merged changes
+- GitHub repository is created with 3 branches: 
 1. main for all the final changes 
 2. feature branch for the working changes
 3. gh-pages branch for publishing reports to Github page
@@ -20,14 +20,14 @@ GitHub repository is created with 3 branches:
 
 - Only approved PR can be merged 
 
-- Currently the git repo is made public but needs to be private and the access is granted by invite only.
+- Currently the git repo is made public but, needs to be private and the access is granted by invite only
 
 - Depending on the role of the user, the user is granted read/write/admin privileges
 
 ## Setup BDD Test automation framework which uses
-I have created the test automation framework using Selenium Webdriver in Java along with Cucumber BDD
-I have used TestNG testing framework 
-I have RestAssured for API testing
+I have created the test automation framework using Selenium Webdriver in Java along with Cucumber BDD.
+I have used TestNG testing framework.
+I have used RestAssured for API testing.
 
 ### Singleton & factory design patterns
 
@@ -66,8 +66,8 @@ I have RestAssured for API testing
 ### Page Object Model/Page Factory Model
 Implemented Page Factory Model based on Page Object Model as object design pattern in Selenium. 
 * Page Object Model
-  web pages are represented as classes Eg LoginPage
-  various elements on the page are defined as variables on the class Eg username
+  web pages are represented as classes. Eg: LoginPage
+  various elements on the page are defined as variables on the class. Eg: username
 * Page Factory Model
   Web page classes or Page Objects containing web elements need to be initialized 
   using Page Factory before the web element variables can be used. 
@@ -81,8 +81,8 @@ Implemented Page Factory Model based on Page Object Model as object design patte
   ```
   
 ### Virtual services to simulate third party API respond 
-I have created UnitTest framework to simulate mocking of stubs using WireMockRule for 200 and 401 status codes
-The tests are created under unitTest package and is run as JUnit tests
+I have created UnitTest framework to simulate mocking of stubs using WireMockRule for 200 and 401 status codes.
+The tests are created under unitTest package and is run as JUnit tests.
 
 ### Use Dynamic Test data in Tests
 1. I have used integer and string parameterization for Api tests
@@ -91,45 +91,52 @@ The tests are created under unitTest package and is run as JUnit tests
 4. I have used Excel sheets to read the test data for UI tests
 
 ## Website  - Automate any flow on https://www.zoho.com/ website
-I have automated Login flow with positive and negative use cases with dynamic test data
-I have also included logOut
+I have automated Login flow with positive and negative use cases with dynamic test data.
+I have also included logOut.
 
 * Scenario 1: User logs in with an empty username
 * Scenario 2: User logs with valid username but invalid password
 * Scenario 3: User logs with valid username and valid password
 
-I have accounted for the fact that user cannot sign in after 20 consecutive times, I fail the test with an assertion message
-I have accounted that website throws a warning message when the number of sign ins is nearing the limit
+I have accounted for the fact that user cannot sign in after 20 consecutive times, I fail the test with an assertion message.
+I have accounted that website throws a warning message when the number of sign ins is nearing the limit.
 
+Test Report when user logs in within the Daily limit
+
+<img width="1790" alt="Screenshot 2024-07-08 at 5 40 07 PM" src="https://github.com/llokesh/java-selenium-cucumber/assets/12717730/743a87a6-806d-4e80-94fa-9a362fa19df1">
+
+Test Report when user logs in outside the Daily limit
+<img width="1768" alt="Screenshot 2024-07-08 at 5 40 35 PM" src="https://github.com/llokesh/java-selenium-cucumber/assets/12717730/e2efef83-b80c-4a13-888b-961fd76a7a12">
 
 ## Endpoint - https://api.restful-api.dev/objects
-I have included below validations
+I have included the below validations:
 - Validates the status code 
 - get all phone names  starting with word Apple and checks if there are any phone names containing word Apple
 - get phone with lowest cost and checks if it is greater than 0
 - validate that ID is not null
 - Contains reusable methods for POST, DELETE, PUT 
 
-I have included below features in your project
+I have included below features in the project:
 1. scalability - The tests scales across multiple environments - QA, DEV, DOCKER 
 2. configurable - Tests can be configured for different datasets
 3. reporting - Uses cucumber test reporting and publishes the report on Github page via continuous deployments in real time
 4. code modularity - Uses Cucumber hooks and background along with page object and page factory design patterns
 
 ## 3. Use any build tool - Maven, Gradle
-I have used Maven tool
+I have used Maven tool.
 
 ## 4. Setup pipeline to run  this code remotely 
-I have setup pipeline to run the tests remotely via Github actions
-Everytime the code is pushed into `feature` branch, the build is triggered which runs both API and UI tests
+I have setup pipeline to run the tests remotely via Github actions.
+Everytime the code is pushed into `feature` branch, the build is triggered which runs both API and UI tests.
 
 ## 5. how to run this code on docker/Kubernetes cluster
-- I have created a Docker compose file which needs to triggered by: `docker-compose up` on the root project directory
-- Run the tests by passing env variable as docker `mvn test -Denv="docker"` to trigger the instantiation of the remote web driver
+- I have created a Docker compose file which needs to triggered by: `docker-compose up` on the root project directory.
+- Run the tests by passing env variable as docker `mvn test -Denv="docker"` to trigger the instantiation of the remote web driver.
 
 ## Create Test Execution report
-1. Test reports are included as a part of the build pipeline and has a link to the report (temporary)
-2. When the tests are run locally, reports are stored under cucumber-reports
+1. Test reports are included as a part of the build pipeline and has a link to the report
+2. The test reports are also published to the git hub pages with every merge and Pull request to feature and main branch and updates the report in real time
+3. When the tests are run locally, reports are stored under cucumber-reports
 
 Future enhancements: 
 1. Create a separate class for Hooks
@@ -150,14 +157,14 @@ Future enhancements:
     * In Eclipse, go to Help, Install new software
     * On the Available Software popup, enter the URL ‚http://cucumber.github.com/cucumber-eclipse/update-site ‚ in the Work with field.
     
-    * You will see ‚Cucumber Eclipse Plugin‚ displayed in the filter; select the checkbox and click Next, and you will navigate to the Install Details popup. Click Next to proceed further.
+    * You will see Cucumber Eclipse Plugin‚ displayed in the filter; select the checkbox and click Next, and you will navigate to the Install Details popup. Click Next to proceed further.
     * Accept the license in the Review License pop-up and click Finish.
     
 
 4. Set Up Maven Project
 
 To execute the tests, right click test.feature file -> Run As -> Cucumber feature. On executing the test.feature file, you will notice that in the console it mentions the implementation of missing steps. This is because we have not defined the code to execute the steps.
-Or use `mvn test` it picks up dev environment by default
+Or use `mvn test` it picks up dev environment by default.
 
 ### Note: How to Fix driver Is not executable error: 
 Navigate to the folder containing chromedriver and run chmod +x chromedriver
