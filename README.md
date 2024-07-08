@@ -101,6 +101,12 @@ I have also included logOut
 I have accounted for the fact that user cannot sign in after 20 consecutive times, I fail the test with an assertion message
 I have accounted that website throws a warning message when the number of sign ins is nearing the limit
 
+Test Report when user logs in within the Daily limit
+
+<img width="1790" alt="Screenshot 2024-07-08 at 5 40 07 PM" src="https://github.com/llokesh/java-selenium-cucumber/assets/12717730/743a87a6-806d-4e80-94fa-9a362fa19df1">
+
+Test Report when user logs in outside the Daily limit
+<img width="1768" alt="Screenshot 2024-07-08 at 5 40 35 PM" src="https://github.com/llokesh/java-selenium-cucumber/assets/12717730/e2efef83-b80c-4a13-888b-961fd76a7a12">
 
 ## Endpoint - https://api.restful-api.dev/objects
 I have included below validations
