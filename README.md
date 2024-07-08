@@ -94,10 +94,10 @@ I have included below validations
 - Contains reusable methods for POST, DELETE, PUT 
 
 I have included below features in your project
-scalability - The tests scales across multiple environments - QA, DEV, DOCKER 
-configurable - Tests can be configured for different datasets
-reporting - Uses cucumber test reporting
-code modularity - Uses Cucumber hooks and background along with page object and page factory design patterns
+1. scalability - The tests scales across multiple environments - QA, DEV, DOCKER 
+2. configurable - Tests can be configured for different datasets
+3. reporting - Uses cucumber test reporting
+4. code modularity - Uses Cucumber hooks and background along with page object and page factory design patterns
 
 ## 3. Use any build tool - Maven, Gradle
 I have used Maven tool
@@ -107,16 +107,20 @@ I have setup pipeline to run the tests remotely via Github actions
 Everytime the code is pushed into `feature` branch, the build is triggered which runs both API and UI tests
 
 ## 5. how to run this code on docker/Kubernetes cluster
-I have created a Docker compose file which needs to triggered by: `docker-compose up` on the root project directory
-Run the tests by passing env variable as docker `mvn test -Denv="docker"` to trigger the instantiation of the remote web driver
+- I have created a Docker compose file which needs to triggered by: `docker-compose up` on the root project directory
+- Run the tests by passing env variable as docker `mvn test -Denv="docker"` to trigger the instantiation of the remote web driver
 
 ## Create Test Execution report
 1. Test reports are included as a part of the build pipeline and has a link to the report (temporary)
 2. When the tests are run locally, reports are stored under cucumber-reports
 
-Future enhancements: Publish test reports to github page
-
-
+Future enhancements: 
+1. Publish test reports to github page
+2. Create a separate class for Hooks
+3. Create separate runners for API and UI tests
+4. SauceLab or BrowserStack integration
+5. Increase test coverage by automating various workflows
+6. Automate OTP authentication validation via Twilio services
 
 ## Prerequisites To Set Up test framework
 
@@ -135,33 +139,8 @@ Future enhancements: Publish test reports to github page
 
 4. Set Up Maven Project
 
-Step 1: To create a Maven Project in Eclipse, click on New ‚Project ‚In the wizard, select Maven Project.
-
-Step 2: nOn the new Maven Project pop-up, select the checkbox to create your project at the default location OR you can also browse and set a new location of your choice. Click on Next to proceed.
-
-Step 3: On the next screen, by default the Group ID and Artifact ID org.apache.maven.archetypes maven-archetypes-quickstart 1.1 is selected. Click on Next to proceed.
-
-Step 4: In the next screen, you will have to mention a Group ID and Artifact ID of your own choice; this is the name of your Maven project. Once you click the Finish button, a Maven project will be created in Eclipse.
-
-Step 5: Now, in order to build a Selenium-Cucumber framework for us to work with, we need to add dependency for Selenium and Cucumber in pom.xml, which is somewhat similar to adding JAR files. 
-
-Step 6: To add dependencies for the above, you should refer to https://mvnrepository.com/. After adding dependencies for Cucumber and Selenium, the pom.xml file will showing up
-
-Step 7: Make sure to update the project after adding dependencies to pom.xml; you can do that by right clicking¬†Project ‚Maven ‚Update Project. Once you update the project, you will see that many JAR files are added to the Maven Dependencies folder in your project.
-
-Step 8: To proceed with Cucumber implementation, we need to create three packages to store the feature files, step definition code and testrunner code. 
-Let us create three packages: features, seleniumgluecode and runner. To create a new package in src/test/java, right click the folder New -> Package.
-
-Step 9: Now create the feature file in the Features package.Right click New -> File ->Enter name test.feature
-Note: If you don’t find File then click onOthers and then select the File option.
-
-
-Step 10: Create a class test.java to write the gluecode for the features written.†Right click seleniumgluecode -> New -> Class enter name as test and save.
-
-Step 11: To run the feature files and their respective code, we need to write a TestNG runner class.Right click runner New -> Class -> enter name as testrunner.
-
-
-To execute the code above, right click test.feature file -> Run As -> Cucumber feature. On executing the test.feature file, you will notice that in the console it mentions the implementation of missing steps. This is because we have not defined the code to execute the steps.
+To execute the tests, right click test.feature file -> Run As -> Cucumber feature. On executing the test.feature file, you will notice that in the console it mentions the implementation of missing steps. This is because we have not defined the code to execute the steps.
+Or use `mvn test` it picks up dev environment by default
 
 ### Note: How to Fix driver Is not executable error: 
 Navigate to the folder containing chromedriver and run chmod +x chromedriver
