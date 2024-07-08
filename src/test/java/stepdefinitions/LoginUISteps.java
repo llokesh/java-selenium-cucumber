@@ -19,8 +19,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class LoginUISteps{
@@ -28,19 +32,25 @@ public class LoginUISteps{
 	public WebDriver driver;
 	LoginPage loginPage = new LoginPage();
 	
-
-	String excelpath ="src/test/resources/ExcelData/Data.xlsx";
-
     
+	String excelpath ="src/test/resources/ExcelData/Data.xlsx";
+	String environment = System.getProperty("env") == null? "dev": System.getProperty("env");
+	
+	
+    //Hooks steps
     @Before("@ui")
-    public void beforeSetUp() {
-//        WebDriverManager.chromedriver().setup();
-        
+    public void beforeSetUp() throws MalformedURLException {
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
+        
+        if(environment == "docker" ) {
+        	driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
+        } else {
         driver = new ChromeDriver(options);
+        }
     	loginPage = PageFactory.initElements(driver, LoginPage.class);
     	
     	driver.manage().window().maximize();
@@ -51,16 +61,18 @@ public class LoginUISteps{
     @After("@ui")
     //Tear down driver after each test
     public void afterTearDown() {
-        driver.quit();
+    	if(driver!=null) {
+    		driver.quit();
+    	}
         System.out.println("The Browser is quit successfully");
     }
 
-	
+	//Gherkin steps
 	@Given("^user is on home page$")
 
     public void user_is_on_homepage() throws Throwable {
 
-          loginPage.navigateToLoginPage();
+          loginPage.navigateToHomePage();
 
       }
 
@@ -82,13 +94,11 @@ public class LoginUISteps{
         String username=listLogin.get(rownum).get("Username");
         String Password=listLogin.get(rownum).get("Password");
         
-        loginPage
-      	.enterUserName(username)
-      	.clickNext();
+        loginPage.enterUserName(username);
+      	loginPage.clickNextAndCheck();
       
-       loginPage
-      	.enterPassword(Password)
-      	.clickNext();
+       loginPage.enterPassword(Password);
+       loginPage.clickNext();
        }
 
      
@@ -97,13 +107,11 @@ public class LoginUISteps{
 
       public void user_enters_examples_credentials(String username, String Password) throws Throwable {
     	  
-          loginPage
-          	.enterUserName(username)
-          	.clickNext();
+          loginPage.enterUserName(username);
+          loginPage.clickNextAndCheck();
           
-          loginPage
-          	.enterPassword(Password)
-          	.clickNext();
+          loginPage.enterPassword(Password);
+          loginPage.clickNext();
 
       }
       
@@ -117,9 +125,8 @@ public class LoginUISteps{
          for (Map<String, String> form : user) {
         	 String passWord = form.get("Password");
         	 
-             loginPage
-         	.enterPassword(passWord)
-         	.clickNext();
+             loginPage.enterPassword(passWord);
+             loginPage.clickNext();
 
          }
       }
@@ -128,9 +135,8 @@ public class LoginUISteps{
 
       public void user_enters_username() throws Throwable {
     	  
-          loginPage
-          	.enterUserName("ok@gmail.com")
-          	.clickNext();
+          loginPage.enterUserName("ok@gmail.com");
+          loginPage.clickNext();
 
       }
       
@@ -138,8 +144,7 @@ public class LoginUISteps{
 
       public void user_clicks_next() throws Throwable {
     	  
-          loginPage
-          	.clickNext();
+          loginPage.clickNext();
 
       }
 
@@ -157,6 +162,15 @@ public class LoginUISteps{
       public void verify_error_is_displayed() throws Throwable {
 
           Assert.assertTrue(loginPage.errorMessageExists());
+
+      }
+      
+      @And("user logs out")
+
+      public void logs_out() throws Throwable {
+    	  
+          loginPage
+          	.logOut();
 
       }
 }

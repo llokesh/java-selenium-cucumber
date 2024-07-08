@@ -53,7 +53,7 @@ public class SeleniumUtils {
         return element;
     }
 
-    public static void explicitWait(int sec) {
+    public static void wait(int sec) {
         try {
             java.lang.Thread.sleep(sec * 1000);
         } catch (InterruptedException e) {

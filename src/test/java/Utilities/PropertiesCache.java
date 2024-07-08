@@ -9,7 +9,7 @@ public class PropertiesCache {
   private static final String BASE_AUTOMATION_PROPERTIES_FILENAME = "automation.properties";
 
   private final Properties configProp = new Properties();
-
+  
   private PropertiesCache() {
     InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(getPropertiesFilename());
     try {

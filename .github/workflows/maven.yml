@@ -10,9 +10,9 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "feature" ]
+    branches: [ "feature", "main" ]
   pull_request:
-    branches: [ "feature" ]
+    branches: [ "feature", "main" ]
 
 jobs:
   build:
@@ -20,19 +20,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: Set up JDK 11
       uses: actions/setup-java@v1
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+        
     - name: Build with Maven
       run: mvn test
-      
+
     - name: Publish Reports to github page
-      uses: deblockt/cucumber-report-annotations-action@v1.7
+      uses: peaceiris/actions-gh-pages@v4
       with:
-       access-token: ${{ secrets.GITHUB_TOKEN }}
-       path: "**/cucumber-report.json"
+       github_token: ${{ secrets.GITHUB_TOKEN }}
+       publish_dir: target/report
 
