@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="20.45" tests="9" skipped="0" failures="3" errors="0">
-<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="2.305">
+<testsuite name="Cucumber" time="21.145" tests="9" skipped="0" failures="4" errors="0">
+<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="1.775">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then the response will return status 200....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Validate ID is not null" time="0.552">
+<testcase classname="Validation of get method" name="Validate ID is not null" time="0.668">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Validate ID is not null................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="1.088">
+<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="0.472">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone names containing "Apple"...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="1.176">
+<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="0.582">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone name of lowest price.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="3.665">
+<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="5.684">
 <failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
 <![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
@@ -43,15 +43,25 @@ Then verify logo is displayed...............................................skip
 And user logs out...........................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with empty username" time="2.467">
+<testcase classname="Login feature" name="Login with empty username" time="2.585">
+<failure type="java.lang.AssertionError" message="expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at stepdefinitions.LoginUISteps.verify_error_is_displayed(LoginUISteps.java:164)
+	at ✽.verify error message is displayed(file:///home/runner/work/java-selenium-cucumber/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:22)
+]]>
+</failure>
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
 And user clicks the next button.............................................passed
-Then verify error message is displayed......................................passed
+Then verify error message is displayed......................................failed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with wrong credentials" time="2.873">
+<testcase classname="Login feature" name="Login with wrong credentials" time="3.006">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -60,7 +70,7 @@ And user enters password....................................................pass
 Then verify error message is displayed......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="3.499">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="3.469">
 <failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
 <![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
@@ -79,7 +89,7 @@ Then verify logo is displayed...............................................skip
 And user logs out...........................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="2.599">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="2.659">
 <failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
 <![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
