@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="7.932" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="3.54">
+<system-out><![CDATA[
+Given I send a GET request to the URL to get user details...................passed
+Then the response will return status 200....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Validation of get method" name="Validate ID is not null" time="1.691">
+<system-out><![CDATA[
+Given I send a GET request to the URL to get user details...................passed
+Then Validate ID is not null................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="1.04">
+<system-out><![CDATA[
+Given I send a GET request to the URL to get user details...................passed
+Then Fetch Phone names containing "Apple"...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="1.398">
+<system-out><![CDATA[
+Given I send a GET request to the URL to get user details...................passed
+Then Fetch Phone name of lowest price.......................................passed
+]]></system-out>
+</testcase>
+</testsuite>
