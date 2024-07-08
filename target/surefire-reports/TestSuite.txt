@@ -1,31 +1,31 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 218.6 s <<< FAILURE! -- in TestSuite
-runner.TestRunner.runScenario["Login as a authenticated user", "Login feature"](5) -- Time elapsed: 24.14 s <<< FAILURE!
+Tests run: 9, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 37.24 s <<< FAILURE! -- in TestSuite
+runner.TestRunner.runScenario["Login as a authenticated user", "Login feature"](5) -- Time elapsed: 6.555 s <<< FAILURE!
 java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
 	at stepdefinitions.LoginUISteps.user_enters_examples_credentials(LoginUISteps.java:111)
 	at ✽.user enters "likithal39@gmail.com" and "Sun$Daisy132"(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:8)
 
-runner.TestRunner.runScenario["Login with empty username", "Login feature"](6) -- Time elapsed: 15.81 s <<< FAILURE!
+runner.TestRunner.runScenario["User on login page and login with valid and invalid inputs from Excel "login" and 0", "Login feature"](8) -- Time elapsed: 5.844 s <<< FAILURE!
 java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_clicks_next(LoginUISteps.java:147)
-	at ✽.user clicks the next button(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:21)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
+	at stepdefinitions.LoginUISteps.the_user_enter_sheet_and(LoginUISteps.java:98)
+	at ✽.The user enter sheet "login" and 0(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:41)
 
-runner.TestRunner.runScenario["Login with wrong credentials", "Login feature"](7) -- Time elapsed: 30.35 s <<< FAILURE!
+runner.TestRunner.runScenario["User on login page and login with valid and invalid inputs from Excel "login" and 1", "Login feature"](9) -- Time elapsed: 4.632 s <<< FAILURE!
 java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_enters_datatable_credentials(LoginUISteps.java:129)
-	at ✽.user enters password(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:30)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
+	at stepdefinitions.LoginUISteps.the_user_enter_sheet_and(LoginUISteps.java:98)
+	at ✽.The user enter sheet "login" and 1(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:41)
 

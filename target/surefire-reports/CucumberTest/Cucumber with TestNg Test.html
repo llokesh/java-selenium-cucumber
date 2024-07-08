@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>6/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 08 16:03:51 CDT 2024</td>
+<td>Started on:</td><td>Mon Jul 08 16:38:48 CDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>217 seconds (217528 ms)</td>
+<tr><td>Total time:</td><td>36 seconds (36600 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,55 +76,55 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User on login page and login with valid and invalid inputs from Excel "login" and 0", "Login feature"</td>
+<td><div><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
+	at stepdefinitions.LoginUISteps.the_user_enter_sheet_and(LoginUISteps.java:98)
+	at ✽.The user enter sheet &quot;login&quot; and 0(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:41)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace319061309", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace319061309'><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertFalse(Assert.java:79)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
+	at stepdefinitions.LoginUISteps.the_user_enter_sheet_and(LoginUISteps.java:98)
+	at ✽.The user enter sheet &quot;login&quot; and 0(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:41)
+</pre></div></td>
+<td>5</td>
+<td>runner.TestRunner@35dab4eb</td></tr>
+<tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login as a authenticated user", "Login feature"</td>
 <td><div><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
 	at stepdefinitions.LoginUISteps.user_enters_examples_credentials(LoginUISteps.java:111)
 	at ✽.user enters &quot;likithal39@gmail.com&quot; and &quot;Sun$Daisy132&quot;(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:8)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1642154835", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1642154835'><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1912308481", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1912308481'><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
 	at stepdefinitions.LoginUISteps.user_enters_examples_credentials(LoginUISteps.java:111)
 	at ✽.user enters &quot;likithal39@gmail.com&quot; and &quot;Sun$Daisy132&quot;(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:8)
 </pre></div></td>
-<td>24</td>
+<td>6</td>
 <td>runner.TestRunner@35dab4eb</td></tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with wrong credentials", "Login feature"</td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User on login page and login with valid and invalid inputs from Excel "login" and 1", "Login feature"</td>
 <td><div><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_enters_datatable_credentials(LoginUISteps.java:129)
-	at ✽.user enters password(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:30)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace333022446", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace333022446'><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
+	at stepdefinitions.LoginUISteps.the_user_enter_sheet_and(LoginUISteps.java:98)
+	at ✽.The user enter sheet &quot;login&quot; and 1(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:41)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace486371171", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace486371171'><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.failNotEquals(Assert.java:1578)
 	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_enters_datatable_credentials(LoginUISteps.java:129)
-	at ✽.user enters password(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:30)
+	at PageModels.LoginPage.clickNextAndCheck(LoginPage.java:75)
+	at stepdefinitions.LoginUISteps.the_user_enter_sheet_and(LoginUISteps.java:98)
+	at ✽.The user enter sheet &quot;login&quot; and 1(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:41)
 </pre></div></td>
-<td>30</td>
-<td>runner.TestRunner@35dab4eb</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with empty username", "Login feature"</td>
-<td><div><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_clicks_next(LoginUISteps.java:147)
-	at ✽.user clicks the next button(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:21)
-... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace671963778", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace671963778'><pre>java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertFalse(Assert.java:79)
-	at PageModels.LoginPage.clickNext(LoginPage.java:72)
-	at stepdefinitions.LoginUISteps.user_clicks_next(LoginUISteps.java:147)
-	at ✽.user clicks the next button(file:///Users/likitha.lokesh/java-selenium-cucumber/src/test/resources/features/LoginUI.feature:21)
-</pre></div></td>
-<td>15</td>
+<td>4</td>
 <td>runner.TestRunner@35dab4eb</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -141,29 +141,29 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>runner.TestRunner@35dab4eb</td></tr>
 <tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User on login page and login with valid and invalid inputs from Excel "login" and 1", "Login feature"</td>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with wrong credentials", "Login feature"</td>
 <td></td>
-<td>64</td>
+<td>5</td>
 <td>runner.TestRunner@35dab4eb</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Fetch Phone names containing Apple", "Validation of get method"</td>
 <td></td>
-<td>0</td>
+<td>1</td>
 <td>runner.TestRunner@35dab4eb</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Fetch Phone name of lowest price", "Validation of get method"</td>
 <td></td>
-<td>0</td>
+<td>1</td>
+<td>runner.TestRunner@35dab4eb</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login with empty username", "Login feature"</td>
+<td></td>
+<td>5</td>
 <td>runner.TestRunner@35dab4eb</td></tr>
 <tr>
 <td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Send a valid Request to get user details", "Validation of get method"</td>
 <td></td>
 <td>2</td>
-<td>runner.TestRunner@35dab4eb</td></tr>
-<tr>
-<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User on login page and login with valid and invalid inputs from Excel "login" and 0", "Login feature"</td>
-<td></td>
-<td>73</td>
 <td>runner.TestRunner@35dab4eb</td></tr>
 </table><p>
 </body>
