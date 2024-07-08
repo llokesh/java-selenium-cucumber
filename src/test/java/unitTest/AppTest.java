@@ -1,4 +1,4 @@
-package selenium_java_cucumber;
+package unitTest;
 
 import static io.restassured.RestAssured.given;
 

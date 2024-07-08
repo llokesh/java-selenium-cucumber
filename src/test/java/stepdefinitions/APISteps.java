@@ -32,7 +32,7 @@ public class APISteps {
  
     public final static String endpoint = PropertiesCache.getInstance().getProperty("api.address");
     
-    //Sample pay load for demonstration purposes
+    //Sample pay load for demonstration purposes for POST, PUT  and DELETE
     String jsonString = "{\"username\" : \"admin\",\"password\" : \"password123\"}";
     
     //REST API Methods: GET, POST, DELETE, PUT
@@ -98,8 +98,7 @@ public class APISteps {
         String responseBodyString =
         		validatableResponse.extract().asPrettyString();
         
-        ObjectMapper MAPPER = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        List<Devices> devices = MAPPER.readValue(responseBodyString, MAPPER.getTypeFactory().constructCollectionType(List.class, Devices.class));
+        List<Devices> devices = executeAndFetch(responseBodyString, Devices.class);
         
         for (Devices device: devices) {
         	System.out.println("ID: " + device.getID());
@@ -107,19 +106,18 @@ public class APISteps {
         } 
     }
     
-    @Then("Fetch Phone names containing Apple")
-    public void verifyPhoneNamesWithApple() throws JsonMappingException, JsonProcessingException{
+    @Then("Fetch Phone names containing {string}")
+    public void verifyPhoneNamesWithApple(String name) throws JsonMappingException, JsonProcessingException{
          
         String responseBodyString =
         		validatableResponse.extract().asPrettyString();
         
-        ObjectMapper MAPPER = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        List<Devices> devices = MAPPER.readValue(responseBodyString, MAPPER.getTypeFactory().constructCollectionType(List.class, Devices.class));
+        List<Devices> devices = executeAndFetch(responseBodyString, Devices.class);
         List<String> appleDevices =new ArrayList<String>();
         
         
         for (Devices device: devices) {
-        	if(device.getName().startsWith("Apple")) {
+        	if(device.getName().startsWith(name)) {
         		appleDevices.add(device.getName());
         	} 
         }
@@ -133,9 +131,8 @@ public class APISteps {
          
         String responseBodyString =
         		validatableResponse.extract().asPrettyString();
-        
-        ObjectMapper MAPPER = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        List<Devices> devices = MAPPER.readValue(responseBodyString, MAPPER.getTypeFactory().constructCollectionType(List.class, Devices.class));
+
+        List<Devices> devices = executeAndFetch(responseBodyString, Devices.class);
         List<Double> prices = new ArrayList<Double>();	
         
         for (Devices device: devices) {
@@ -145,7 +142,8 @@ public class APISteps {
         		String json = mapper.writeValueAsString(device.getData());
 	        	Data data = mapper.readValue(json, Data.class);
 
-	        	
+	        	//Few of the price fields in the data object are of data type, String and few others are of data type, Double
+	        	//To prevent loss of data, both the data types are considered and converted into double
 	        	if(data.getPrice() != null) {
 	        		prices.add(Double.parseDouble(data.getPrice()));
 	        	}
@@ -165,6 +163,11 @@ public class APISteps {
         
      Assert.assertTrue(minPrice > 0);
 
+    }
+    
+    public static <T>List<T> executeAndFetch(String responseBodyString, Class<T> tClass) throws JsonMappingException, JsonProcessingException {
+        ObjectMapper MAPPER = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        return MAPPER.readValue(responseBodyString, MAPPER.getTypeFactory().constructCollectionType(List.class, tClass));
     }
 }
 

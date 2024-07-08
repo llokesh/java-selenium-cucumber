@@ -19,8 +19,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
+
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class LoginUISteps{
@@ -28,19 +32,25 @@ public class LoginUISteps{
 	public WebDriver driver;
 	LoginPage loginPage = new LoginPage();
 	
-
-	String excelpath ="src/test/resources/ExcelData/Data.xlsx";
-
     
+	String excelpath ="src/test/resources/ExcelData/Data.xlsx";
+	String environment = System.getProperty("env") == null? "dev": System.getProperty("env");
+	
+	
+    //Hooks steps
     @Before("@ui")
-    public void beforeSetUp() {
-//        WebDriverManager.chromedriver().setup();
-        
+    public void beforeSetUp() throws MalformedURLException {
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
+        
+        if(environment == "docker" ) {
+        	driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
+        } else {
         driver = new ChromeDriver(options);
+        }
     	loginPage = PageFactory.initElements(driver, LoginPage.class);
     	
     	driver.manage().window().maximize();
@@ -55,12 +65,12 @@ public class LoginUISteps{
         System.out.println("The Browser is quit successfully");
     }
 
-	
+	//Gherkin steps
 	@Given("^user is on home page$")
 
     public void user_is_on_homepage() throws Throwable {
 
-          loginPage.navigateToLoginPage();
+          loginPage.navigateToHomePage();
 
       }
 
@@ -157,6 +167,15 @@ public class LoginUISteps{
       public void verify_error_is_displayed() throws Throwable {
 
           Assert.assertTrue(loginPage.errorMessageExists());
+
+      }
+      
+      @And("user logs out")
+
+      public void logs_out() throws Throwable {
+    	  
+          loginPage
+          	.logOut();
 
       }
 }
