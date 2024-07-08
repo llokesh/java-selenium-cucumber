@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="18.298" tests="9" skipped="0" failures="3" errors="0">
-<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="1.714">
+<testsuite name="Cucumber" time="18.205" tests="9" skipped="0" failures="3" errors="0">
+<testcase classname="Validation of get method" name="Send a valid Request to get user details" time="2.12">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then the response will return status 200....................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Validate ID is not null" time="1.207">
+<testcase classname="Validation of get method" name="Validate ID is not null" time="0.434">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Validate ID is not null................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="0.403">
+<testcase classname="Validation of get method" name="Fetch Phone names containing Apple" time="0.855">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone names containing "Apple"...................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="0.432">
+<testcase classname="Validation of get method" name="Fetch Phone name of lowest price" time="0.331">
 <system-out><![CDATA[
 Given I send a GET request to the URL to get user details...................passed
 Then Fetch Phone name of lowest price.......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="3.652">
+<testcase classname="Login feature" name="Login as a authenticated user - Example #1.1" time="3.513">
 <failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
 <![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
@@ -43,7 +43,7 @@ Then verify logo is displayed...............................................skip
 And user logs out...........................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with empty username" time="2.419">
+<testcase classname="Login feature" name="Login with empty username" time="2.536">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -51,7 +51,7 @@ And user clicks the next button.............................................pass
 Then verify error message is displayed......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="Login with wrong credentials" time="2.764">
+<testcase classname="Login feature" name="Login with wrong credentials" time="2.688">
 <system-out><![CDATA[
 Given user is on home page..................................................passed
 When user navigate to Login page............................................passed
@@ -60,7 +60,7 @@ And user enters password....................................................pass
 Then verify error message is displayed......................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="2.982">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.1" time="2.809">
 <failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
 <![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
@@ -79,7 +79,7 @@ Then verify logo is displayed...............................................skip
 And user logs out...........................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="2.487">
+<testcase classname="Login feature" name="User on login page and login with valid and invalid inputs from Excel &quot;&lt;Sheetname&gt;&quot; and &lt;RowNumber&gt; - Example #1.2" time="2.699">
 <failure type="java.lang.AssertionError" message="Maximum limits are reached and user can no longer log in expected [false] but found [true]">
 <![CDATA[java.lang.AssertionError: Maximum limits are reached and user can no longer log in expected [false] but found [true]
 	at org.testng.Assert.fail(Assert.java:111)
