@@ -34,11 +34,11 @@ jobs:
       run: mvn compile
 
     - name: Debug
-      run: ls target
+      run: ls 
       
     - name: Publish Reports to github page
       uses: peaceiris/actions-gh-pages@v4
       with:
        github_token: ${{ secrets.GITHUB_TOKEN }}
-       publish_dir: cucumber-html-reports
+       publish_dir: target
 
